@@ -1,12 +1,10 @@
-import {Router} from "express";
+import { Router } from 'express';
+import { methodHTTP as getCategoriaController } from '../controllers/categoria.controller.js';
 
 const router = Router();
 
-router.get("/", (req,res)=>{
-    res.send("categorias de la Db inventarios")
-})
+/* Crear una respuesta desde server metodo http get */
+router.get('/', getCategoriaController.getCategorias );
 
-app.use(categoriaRoutes)
-
+/* Hacemos disponible a router en toda la app */
 export default router;
-
